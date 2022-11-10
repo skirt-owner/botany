@@ -42,18 +42,33 @@ background_colorpicker.addEventListener('input', (event) => {
     background_ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
+const width = document.getElementById('width')
+width.addEventListener('change', (event) => {
+    let input_data = event.target;
+    let new_width = input_data.value;
+    background.width = new_width;
+    canvas.width = new_width;
+});
+
+const height = document.getElementById('height')
+height.addEventListener('change', (event) => {
+    let input_data = event.target;
+    let new_height = input_data.value;
+    background.height = new_height;
+    canvas.height = new_height;
+});
+
 function draw() {
 
 }
 
 // setup canvas size(width, height) and backgroundColor
 function setup() {
-  let width = 700, height = 700;
-  canvas.width = width;
-  canvas.height = height;
-
-  background.width = width;
-  background.height = height;
+  let w = width.value, h = height.value;
+  canvas.width = w;
+  canvas.height = h;
+  background.width = w;
+  background.height = h;
 
   background_ctx.fillStyle = background_colorpicker.value;
   background_ctx.fillRect(0, 0, canvas.width, canvas.height);
