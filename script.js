@@ -1,75 +1,161 @@
-/*jshint esversion: 6 */
-const canvas = document.getElementById('main_canvas');
-const ctx = canvas.getContext('2d');
+const body = document.getElementsByTagName('body')[0];
 
-const background = document.getElementById('background_canvas');
-const background_ctx = background.getContext('2d');
+const main = document.createElement('main');
+main.classList.add('main');
+body.appendChild(main);
 
-// event to download canvas as picture
-const download_button = document.getElementById('download_button');
-download_button.addEventListener('click', () => {
-    const temp_canvas = document.createElement('canvas');
-    temp_canvas.width = canvas.width;
-    temp_canvas.height = canvas.height;
-    const temp_ctx = temp_canvas.getContext('2d');
+const canvas_container = document.createElement('div');
+canvas_container.classList.add('main-canvas-container');
+canvas_container.id = 'canvas_container';
+main.appendChild(canvas_container);
 
-    temp_ctx.drawImage(background, 0, 0);
-    temp_ctx.drawImage(canvas, 0, 0);
+const main_canvas = document.createElement('canvas');
+main_canvas.classList.add('main-canvas');
+main_canvas.id = 'main_canvas';
+canvas_container.appendChild(main_canvas);
 
-    let url = temp_canvas.toDataURL();
-    let temp_image = document.createElement('a');
-    temp_image.download = 'tree.png';
-    temp_image.href = url;
-    temp_image.click();
-    temp_image.remove();
-    temp_canvas.remove();
-});
+const background_canvas = document.createElement('canvas');
+background_canvas.classList.add('background-canvas');
+background_canvas.id = 'background_canvas';
+canvas_container.appendChild(background_canvas);
 
-// event to generate new l-system
-// whenever user clicks 'generate' button
-const generate_button = document.getElementById('generate_button');
-generate_button.addEventListener('click', () => {
-    draw();
-});
+const options_container = document.createElement('div');
+options_container.classList.add('main-options-container');
+options_container.classList.add('options');
+options_container.id = 'options_container';
+main.appendChild(options_container);
 
-// event to change canvas backgroundColor
-// whenever user send new input
-const background_colorpicker = document.getElementById('background_colorpicker');
-background_colorpicker.addEventListener('input', (event) => {
-    let input_data = event.target;
-    let new_color = input_data.value;
-    background_ctx.fillStyle = new_color;
-    background_ctx.fillRect(0, 0, canvas.width, canvas.height);
-});
+const main_list = document.createElement('ul');
+main_list.classList.add('main-variable-list');
+main_list.classList.add('list');
+main_list.classList.add('variable-list');
+options_container.appendChild(main_list);
 
-const width = document.getElementById('width')
-width.addEventListener('change', (event) => {
-    let input_data = event.target;
-    let new_width = input_data.value;
-    background.width = new_width;
-    canvas.width = new_width;
-});
+const list_item1 = document.createElement('li');
+list_item1.classList.add('main-list-item');
+list_item1.classList.add('list-item');
+main_list.appendChild(list_item1);
 
-const height = document.getElementById('height')
-height.addEventListener('change', (event) => {
-    let input_data = event.target;
-    let new_height = input_data.value;
-    background.height = new_height;
-    canvas.height = new_height;
-});
+const width_input = document.createElement('input');
+width_input.classList.add('size-input');
+width_input.classList.add('width');
+width_input.id = 'width';
+width_input.type = 'number';
+width_input.value = 500;
+width_input.min = 100, width_input.max = 3000
+list_item1.appendChild(width_input);
 
-function draw() {
+const main_text1 = document.createElement('span');
+main_text1.classList.add('main-text');
+main_text1.append('w');
+list_item1.appendChild(main_text1);
 
-}
+const height_input = document.createElement('input');
+height_input.classList.add('size-input');
+height_input.classList.add('height');
+height_input.id = 'height';
+height_input.type = 'number';
+height_input.value = 500;
+height_input.min = 100, height_input.max = 3000
+list_item1.appendChild(height_input);
 
-// setup canvas size(width, height) and backgroundColor
-function setup() {
-  let w = width.value, h = height.value;
-  canvas.width = w;
-  canvas.height = h;
-  background.width = w;
-  background.height = h;
+const main_text2 = document.createElement('span');
+main_text2.classList.add('main-text');
+main_text2.append('h');
+list_item1.appendChild(main_text2);
 
-  background_ctx.fillStyle = background_colorpicker.value;
-  background_ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
+const list_item2 = document.createElement('li');
+list_item2.classList.add('main-list-item');
+list_item2.classList.add('list-item');
+main_list.appendChild(list_item2);
+
+const background_colorpicker_input = document.createElement('input');
+background_colorpicker_input.classList.add('color-input');
+background_colorpicker_input.classList.add('background-colorpicker');
+background_colorpicker_input.id = 'background_colorpicker';
+background_colorpicker_input.type = 'color';
+background_colorpicker_input.value = "#808080";
+list_item2.appendChild(background_colorpicker_input);
+
+const main_text3 = document.createElement('span');
+main_text3.classList.add('main-text');
+main_text3.append('background colorpicker');
+list_item2.appendChild(main_text3);
+
+const list_item3 = document.createElement('li');
+list_item3.classList.add('main-list-item');
+list_item3.classList.add('list-item');
+main_list.appendChild(list_item3);
+
+const flowers_colorpicker_input = document.createElement('input');
+flowers_colorpicker_input.classList.add('color-input');
+flowers_colorpicker_input.classList.add('flowers-colorpicker');
+flowers_colorpicker_input.id = 'flowers_colorpicker';
+flowers_colorpicker_input.type = 'color';
+flowers_colorpicker_input.value = "#ac559e";
+list_item3.appendChild(flowers_colorpicker_input);
+
+const main_text4 = document.createElement('span');
+main_text4.classList.add('main-text');
+main_text4.append('flowers colorpicker');
+list_item3.appendChild(main_text4);
+
+const list_item4 = document.createElement('li');
+list_item4.classList.add('main-list-item');
+list_item4.classList.add('list-item');
+main_list.appendChild(list_item4);
+
+const leaves_colorpicker_input = document.createElement('input');
+leaves_colorpicker_input.classList.add('color-input');
+leaves_colorpicker_input.classList.add('leaves-colorpicker');
+leaves_colorpicker_input.id = 'leaves_colorpicker';
+leaves_colorpicker_input.type = 'color';
+leaves_colorpicker_input.value = "#439d67";
+list_item4.appendChild(leaves_colorpicker_input);
+
+const main_text5 = document.createElement('span');
+main_text5.classList.add('main-text');
+main_text5.append('leaves colorpicker');
+list_item4.appendChild(main_text5);
+
+const list_item5 = document.createElement('li');
+list_item5.classList.add('main-list-item');
+list_item5.classList.add('list-item');
+main_list.appendChild(list_item5);
+
+const trunk_colorpicker_input = document.createElement('input');
+trunk_colorpicker_input.classList.add('color-input');
+trunk_colorpicker_input.classList.add('trunk-colorpicker');
+trunk_colorpicker_input.id = 'trunk_colorpicker';
+trunk_colorpicker_input.type = 'color';
+trunk_colorpicker_input.value = "#7a4925";
+list_item5.appendChild(trunk_colorpicker_input);
+
+const main_text6 = document.createElement('span');
+main_text6.classList.add('main-text');
+main_text6.append('trunk colorpicker');
+list_item5.appendChild(main_text6);
+
+const buttons_container = document.createElement('div');
+buttons_container.classList.add('buttons');
+buttons_container.classList.add('main-buttons-container');
+buttons_container.id = 'buttons_container';
+options_container.appendChild(buttons_container);
+
+const generate_button_button = document.createElement('button');
+generate_button_button.classList.add('main-generate-button');
+generate_button_button.classList.add('button');
+generate_button_button.classList.add('generate-button');
+generate_button_button.type = 'button';
+generate_button_button.id = 'generate_button';
+generate_button_button.append('generate');
+buttons_container.appendChild(generate_button_button);
+
+const download_button_button = document.createElement('button');
+download_button_button.classList.add('main-download-button');
+download_button_button.classList.add('button');
+download_button_button.classList.add('download-button');
+download_button_button.type = 'button';
+download_button_button.id = 'download_button';
+download_button_button.append('download');
+buttons_container.appendChild(download_button_button);

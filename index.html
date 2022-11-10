@@ -7,46 +7,10 @@
   <title>Botany</title>
 </head>
 
-<body onload="setup();">
-  <main class="main">
-    <div id="canvas_container" class="main-canvas-container">
-      <canvas id="main_canvas" class="main-canvas"></canvas>
-      <canvas id="background_canvas" class="background-canvas"></canvas>
-    </div>
-
-    <div id="options_container" class="main-options-container options">
-      <ul class="main-variables-list list variable-list">
-        <li class="main-list-item list-item">
-          <input type="number" id="width" value=500 min=100 max=3000 class="size-input width"><span class="main-text">w</span>
-          <input type="number" id="height" value=500 min=100 max=3000 class="size-input height"><span class="main-text">h</span>
-        </li>
-        <li class="main-list-item list-item">
-          <input type="color" id="background_colorpicker" value="#808080" class="color-input background-colorpicker"><span class="main-text">background color</span>
-        </li>
-        <li class="main-list-item list-item">
-          <input type="color" id="flowers_colorpicker" value="#ac559e" class="color-input flowers-colorpicker"><span class="main-text">flowers color</span>
-        </li>
-        <li class="main-list-item list-item">
-          <input type="color" id="leaves_colorpicker" value="#439d67" class="color-input leaves-colorpicker"><span class="main-text">leaves color</span>
-        </li>
-        <li class="main-list-item list-item last-list-item">
-          <input type="color" id="trunk_colorpicker" value="#7a4925" class="color-input trunk-colorpicker"><span class="main-text">trunk color</span>
-        </li>
-      </ul>
-
-      <div id="buttons_container" class="main-buttons-container buttons">
-        <button type="button" id="generate_button" class="main-generate-button button generate-button">
-          generate
-        </button>
-        <button type="button" id="download_button" class="main-download-button button download-button">
-          download
-        </button>
-      </div>
-    </div>
-
-  </main>
-</body>
+<body onload='setup();'></body>
 
 <script src="script.js"></script>
+<script src="setup.js"></script>
+<script src="events.js"></script>
 
 </html>
