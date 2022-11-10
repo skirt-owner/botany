@@ -47,7 +47,6 @@ generate_button.addEventListener('click', () => {
     width.dispatchEvent(change_event);
     height.dispatchEvent(change_event);
     background_colorpicker.dispatchEvent(input_event);
-    draw();
 });
 
 width.addEventListener('change', (event) => {
