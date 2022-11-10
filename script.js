@@ -1,14 +1,4 @@
 /*jshint esversion: 6 */
-
-// function downloadCanvas() {
-//   const canvas = document.getElementById("my_canvas");
-//   image = canvas.toDataURL();
-//   let url = document.createElement("a");
-//   url.download = "l-system-tree.png";
-//   url.href = image;
-//   url.click();
-// }
-
 const canvas = document.getElementById('main_canvas');
 const ctx = canvas.getContext('2d');
 
