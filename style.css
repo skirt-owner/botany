@@ -116,6 +116,7 @@ body {
 }
 
 .button {
+  min-width: 150px;
   cursor: pointer;
   color: rgb(255, 255, 255);
   display: inline-block;
@@ -133,7 +134,7 @@ body {
 }
 
 .main-generate-button {
-  width: 150px;
+  width: auto;
   font-size: 20px;
   text-align: center;
   border-width: 2px;
@@ -146,7 +147,7 @@ body {
 } */
 
 .main-download-button {
-  width: 150px;
+  width: auto;
   font-size: 20px;
   text-align: center;
   border-width: 2px;
