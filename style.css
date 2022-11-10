@@ -45,6 +45,8 @@ body {
   margin: 1em 0 1em 0;
   list-style-position: outside;
   list-style-type: none;
+  max-height: 300px;
+  overflow: auto;
 }
 
 .variable-list {
@@ -66,6 +68,12 @@ body {
   margin-bottom: 8px;
   flex-direction: row;
   column-gap: 10px;
+  border-bottom: 1px dashed;
+  padding-bottom: 10px;
+}
+
+.last-list-item {
+  border-bottom: none;
 }
 
 .main-text {
@@ -87,7 +95,7 @@ body {
   display: flex;
 }
 
-.background-colorpicker, .leaves-colorpicker, .trunk-colorpicker {
+.background-colorpicker, .flowers-colorpicker, .leaves-colorpicker, .trunk-colorpicker {
   padding: 3px;
   margin-right: 4px;
   border-radius: 4px;
