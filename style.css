@@ -6,6 +6,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .main {
@@ -20,8 +21,18 @@ body {
   justify-content: center;
 }
 
+.background-canvas {
+  z-index: 0;
+  position: absolute;
+}
+
+.main-canvas {
+  z-index: 1;
+}
+
 .main-canvas-container {
   flex: 0 0 auto;
+  position: relative;
   width: auto;
   border: 2px solid rgb(120, 120, 120);
   height: auto;
