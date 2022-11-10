@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Botany</title>
+</head>
+
+<body onload="setup();">
+  <main class="main">
+    <div id="canvas_container" class="main-canvas-container">
+      <canvas id="main_canvas" class="main-canvas"></canvas>
+    </div>
+
+    <div id="options_container" class="main-options-container options">
+      <ul class="main-variables-list list variable-list">
+        <li class="main-list-item list-item">
+          <input type="color" id="background_colorpicker" value="#808080" class="input background-colorpicker"><span class="main-text">background color</span>
+        </li>
+        <li class="main-list-item list-item">
+          <input type="color" id="leaves_colorpicker" value="#439d67" class="input leaves-colorpicker"><span class="main-text">leaves color</span>
+        </li>
+        <li class="main-list-item list-item">
+          <input type="color" id="trunk_colorpicker" value="#7a4925" class="input trunk-colorpicker"><span class="main-text">trunk color</span>
+        </li>
+      </ul>
+
+      <div id="buttons_container" class="main-buttons-container buttons">
+        <!-- <button type="button" id="generate_button" class="main-generate-button button generate-button">
+          generate
+        </button> -->
+        <button type="button" id="download_button" class="main-download-button button download-button">
+          download
+        </button>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+<script src="script.js"></script>
+
+</html>
